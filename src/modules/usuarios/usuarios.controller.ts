@@ -35,6 +35,11 @@ import { RolesGuard } from '../common/guard/roles.guard';
 export class UsuariosController {
   constructor(private readonly usuariosService: UsuariosService) {}
 
+  @Get('hola')
+  hola(){
+    return 'hola mundo'
+  }
+
   @UseGuards(AuthGuard, RolesGuard)
   @Roles(RolesEnum.ADMIN)
   @Post('registrar')
